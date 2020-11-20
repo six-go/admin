@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+
 // 引入路由器对象
 import router from './router'
 // 引入状态管理对象
