@@ -1,6 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+import AntD from 'ant-design-vue'
+
+// 声明使用
+Vue.use(AntD)
+
+// ant-design的样式
+import 'ant-design-vue/dist/antd.css'
 
 // 引入路由器对象
 import router from './router'
@@ -8,6 +15,7 @@ import router from './router'
 import store from './store'
 
 Vue.config.productionTip = false
+
 
 new Vue({
   render: h => h(App),

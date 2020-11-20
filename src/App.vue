@@ -2,6 +2,7 @@
   <div class="outerBox">
     <!-- 导航栏区域 -->
     <ul class="nav">
+<<<<<<< HEAD
       <div style="width: 256px">
       <a-button type="primary" style="margin-bottom: 16px" @click="toggleCollapsed">
         <a-icon :type="collapsed ? 'menu-unfold' : 'menu-fold'" />
