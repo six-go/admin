@@ -2,7 +2,7 @@
   <div class="outerBox">
     <!-- 导航栏区域 -->
     <ul class="nav">
-      
+
     </ul>
     <!-- 右侧内容区 -->
     <div class="content">
