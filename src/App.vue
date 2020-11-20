@@ -1,28 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="outerBox">
+    <!-- 导航栏区域 -->
+    <ul class="nav">
+      
+    </ul>
+    <!-- 右侧内容区 -->
+    <div class="content">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
+<style lang='less' rel='stylesheet/less' scoped>
+.outerBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  // 导航栏
+  .nav {
+    width: 18%;
+    background-color: rgb(50 ,65 ,87);
+  }
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  // 内容区域
+  .content {
+    background-color: pink;
+    flex: 1;
+  }
 }
+
 </style>
