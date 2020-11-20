@@ -4,7 +4,7 @@ import NProgress from 'nprogress'
 
 // 二次封装axios
 const ajax = axios.create({
-  baseURL: '/',
+  baseURL: '/api',
   timeout: 20000
 })
 
