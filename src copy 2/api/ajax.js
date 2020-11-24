@@ -4,9 +4,9 @@ import NProgress from "nprogress";
 
 // 二次封装axios
 const ajax = axios.create({
-  baseURL: '/api',
-  timeout: 20000
-})
+  baseURL: "/api",
+  timeout: 20000,
+});
 
 // 请求拦截器
 ajax.interceptors.request.use((config) => {

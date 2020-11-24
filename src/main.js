@@ -10,13 +10,13 @@ Vue.use(FormModel)
 Vue.use(ElementUi)
 
 // ant-design的样式
-import 'ant-design-vue/dist/antd.css'
+import "ant-design-vue/dist/antd.css";
 
 // element-ui样式
 import 'element-ui/lib/theme-chalk/index.css'
 
 // 引入路由器对象
-import router from './router'
+import router from "./router";
 // 引入状态管理对象
 import store from './store'
 
@@ -39,5 +39,5 @@ new Vue({
     Vue.prototype.$bus = new Vue()
   },
   router,
-  store
-}).$mount('#app')
+  store,
+}).$mount("#app");

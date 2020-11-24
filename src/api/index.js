@@ -50,3 +50,49 @@ export const addshoptype = (data) => ajax.post('/shopping/addcategory', data)
 export const getShoptype = (id) => ajax.get(`/shopping/v2/menu?restaurant_id=${id}`)
 //添加食品
 export const addshop = (data) => ajax.post('/shopping/addfood', data)
+
+export const getFoodList = () => {
+  return ajax({
+    url: `shopping/v2/foods`,
+    method: "GET",
+  });
+};
+
+export const deleteFood = (id) => {
+  return ajax({
+    url: `shopping/v2/food/:${id}`,
+    method: "DELETE",
+  });
+};
+
+export const updatefood = ({
+  item_id,
+  name,
+  description,
+  image_path,
+  restaurant_id,
+  category_id = 2,
+  specfoods,
+}) =>
+  ajax.post("/shopping/v2/updatefood", {
+    item_id: 7176,
+    name: "0000",
+    description: "3",
+    image_path: "175f3c2617583058.jpg",
+    restaurant_id: 1,
+    category_id: 9253,
+
+    specfoods: [{ specs: "默认", packing_fee: 0, price: 20 }],
+  });
+// https://elm.cangdu.org/shopping/v2/food/:food_id
+// // 食品列表
+// export const reqGetFoodList = () => ajax.get("shopping/v2/foods");
+// // 食品数量
+// export const reqGetFoodCount = () => ajax.get("/shopping/v2/foods/count");
+
+// export const reqGetFoodListID = (id) =>
+//   ajax.get(`shopping/v2/foods?offset=0&limit=20&restaurant_id=${id}`);
+
+// export const delectGetFoodCount = (foodId) =>
+//   ajax.delete(`shopping/v2/food/:${foodId}`);
+
