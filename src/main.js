@@ -4,6 +4,10 @@ import App from './App'
 import AntD, { FormModel, message } from 'ant-design-vue'
 import ElementUi from 'element-ui'
 
+//手动配置elementUi
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
+Vue.use(ElementUI);
 // 声明使用
 Vue.use(AntD)
 Vue.use(FormModel)
@@ -30,7 +34,7 @@ Vue.prototype.$message = message
 
 Vue.prototype.$userCityList = reqUserCityList
 
-Vue.prototype.$getCity = reqCity
+Vue.prototype.$reqCity = reqCity
 
 
 new Vue({

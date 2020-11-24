@@ -24,6 +24,12 @@ export const reqAdminCurrentCity = () => ajax.get('/v1/cities?type=guess')
 // 根据ip获取当前城市
 export const reqCity = () => mapAjax.get(`/ip?key=${key}`)
 
+// 搜索城市列表
+export const reqGetCityList = (keyword) => ajax.get('/v1/pois', {
+  city_id: 11,
+  keyword
+})
+
 // 获取店铺分类信息
 export const reqCategoryInfo = () => ajax.get('/shopping/v2/restaurant/category')
 // 请求API
@@ -64,3 +70,5 @@ export const reqFoodScore = (restaurant_id) =>
 //更新食品
 export const updateFoodList = (data) =>
   ajax.post("/shopping/v2/updatefood", data);
+// 请求API
+export const getUserList = data => fetch('/v1/users/list', data)

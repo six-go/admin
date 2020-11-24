@@ -1,4 +1,4 @@
-import { getFoodList, deleteFood, updatefood } from "../../api/index";
+import { getFoodList, deleteFood, updatefood } from "../../api";
 export default {
   state: {
     foods: [],

@@ -29,7 +29,7 @@
           Zone two
         </a-select-option>
       </a-select>
-      <span>当前城市：</span>
+      <span>当前城市：{{city}}</span>
     </a-form-model-item>
     <!-- 联系电话 -->
     <a-form-model-item ref="phone" label="联系电话" prop="phone">
@@ -129,7 +129,7 @@
       </a-upload>
     </a-form-model-item>
     <!-- 上传营业执照 -->
-    <!-- <a-form-model-item  label="上传营业执照"  :wrapper-col="{ span: 5, offset: 0 }">
+    <a-form-model-item  label="上传营业执照"  :wrapper-col="{ span: 5, offset: 0 }">
       <a-upload
         name="avatar_2"
         list-type="picture-card"
@@ -144,9 +144,9 @@
           <a-icon :type="loading_2 ? 'loading' : 'plus'" />
         </div>
       </a-upload>
-    </a-form-model-item> -->
+    </a-form-model-item>
     <!-- 上传餐饮服务许可证 -->
-    <!-- <a-form-model-item  label="上传餐饮服务许可证"  :wrapper-col="{ span: 5, offset: 0 }">
+    <a-form-model-item  label="上传餐饮服务许可证"  :wrapper-col="{ span: 5, offset: 0 }">
       <a-upload
         name="avatar_3"
         list-type="picture-card"
@@ -161,7 +161,7 @@
           <a-icon :type="loading_3 ? 'loading' : 'plus'" />
         </div>
       </a-upload>
-    </a-form-model-item> -->
+    </a-form-model-item>
     <!-- 优惠活动 -->
     <a-form-model-item label="优惠活动" prop="classify" :wrapper-col="{ span: 5, offset: 0 }">
       <a-select :default-value="`${selectData[0].key}:${selectData[0].name}`" @change="selectChecked">
@@ -312,12 +312,17 @@ export default {
       title: '减',
       // 活动名称
       disName: '',
+      // 当前所在城市
+      city: ''
     };
   },
   async mounted() {
+    var cityCode = returnCitySN.cid;
+    console.log(returnCitySN)
+    const reg = /省([\s\S]+)市/
+    this.city = returnCitySN.cname.match(reg)[1]
     // 分发action
     this.$store.dispatch('req_shopcategorylist')
-    const result = await this.$getCity()
     // 初始化表格数据
     // this.tableData = this.selectData.filter(item => item.detail)
     

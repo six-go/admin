@@ -1,6 +1,5 @@
-// 引入Home
-import Home from "../pages/Home";
 import FoodList from "../pages/FoodList";
+import userList from "../pages/userList";
 
 // 登录页面
 import Login from '../pages/Login'
@@ -37,4 +36,8 @@ export default [
     path: '/addgoods',
     component: AddGoods
   },
-]
+  {
+    path: "/userlist",
+    component: userList,
+  },
+] 
