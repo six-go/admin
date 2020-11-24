@@ -1,14 +1,15 @@
 // 引入Home
-import Home from '../pages/Home'
+import userList from "../pages/userList";
+import Home from "../pages/Home/";
 
 // 暴露routes
 export default [
   {
-    path: '/home',
-    component: Home
+    path: "/",
+    component: () => import("../pages/Home"),
   },
   {
-    path: '/',
-    redirect: '/home'
-  }
-]
+    path: "/userlist",
+    component: userList,
+  },
+];
