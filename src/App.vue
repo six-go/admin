@@ -191,7 +191,6 @@ export default {
         this.menu = ''
         this.menuItem = ''
       } if(val.path !== '/' && val.path !== '/manage'){
-        console.log(11)
         this.menu = Object.keys(this.menuList).find(item => Object.keys(this.menuList[item]).indexOf(val.path) !== -1)
         this.menuItem = this.menuList[this.menu][val.path]
       }

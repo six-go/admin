@@ -1,6 +1,6 @@
 // 引入Home
 import Home from "../pages/Home";
-import FoodList from "../components/FoodList";
+import FoodList from "../pages/FoodList";
 
 // 登录页面
 import Login from '../pages/Login'
@@ -17,7 +17,10 @@ export default [
     path: '/',
     component: Login,
   },
-  { path: "/foodlist", component: FoodList },
+  {
+    path: "/foodlist",
+    component: FoodList,
+  },
   {
     path: '/visitor',
     component: Visitor

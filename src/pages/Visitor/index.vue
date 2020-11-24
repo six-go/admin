@@ -81,10 +81,11 @@ export default {
 }
 </script>
 <style lang='less' rel='stylesheet/less' scoped>
+
 .echart-box {
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
+  height: 500px;
   padding: 30px 100px 100px;
 }
 </style>
