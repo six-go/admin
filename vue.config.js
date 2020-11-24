@@ -13,6 +13,10 @@ module.exports = {
         pathRewrite: {
           "^/api": ""
         }
+      },
+      '/v3': {
+        target: 'https://restapi.amap.com',
+        changeOrigin: true,
       }
     }
   }
