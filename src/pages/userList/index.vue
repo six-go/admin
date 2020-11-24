@@ -1,6 +1,5 @@
 <template>
   <div class="fillcontain">
-    <head-top></head-top>
     <div class="table_container">
       <el-table :data="tableData" highlight-current-row style="width: 100%">
         <el-table-column type="index" width="100"> </el-table-column>
@@ -15,7 +14,7 @@
       <div class="Pagination" style="text-align:left; margin-top:100px;">
         <el-pagination
           @size-chang="handleSizeCheange"
-          @current-change="handleSizeCheange"
+          @current-change="handleCurrentChange"
           :current-page="currentPage"
           :page-size="20"
           layout="total,prev,pager,next"
@@ -62,9 +61,6 @@ export default {
   // components: {
   //   headTop,
   // },
-  created() {
-    this.inntData();
-  },
   methods: {
     async initData() {
       try {
@@ -79,7 +75,7 @@ export default {
         console.log("获取数据失败,err");
       }
     },
-    hanleSizeChange(val) {
+    handleSizeCheange(val) {
       console.log(`每页${val}条`);
     },
     handleCurrentChange(val) {

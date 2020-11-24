@@ -20,13 +20,21 @@
       />
     </a-form-model-item>
     <!-- 详细地址 -->
-    <a-form-model-item label="详情地址" prop="region">
-      <a-select v-model="form.region" placeholder="请输入地址">
-        <a-select-option value="shanghai">
-          Zone one
-        </a-select-option>
-        <a-select-option value="beijing">
-          Zone two
+    <a-form-model-item label="详情地址" prop="value">
+      <a-select
+        mode="multiple"
+        label-in-value
+        :value="value"
+        placeholder="请输入关键词"
+        style="width: 100%"
+        :filter-option="false"
+        :not-found-content="fetching ? undefined : null"
+        @search="fetchUser"
+        @change="handleChange"
+      >
+        <a-spin v-if="fetching" slot="notFoundContent" size="small" />
+        <a-select-option v-for="d in cityList" :key="d.text">
+          {{ d.text }}
         </a-select-option>
       </a-select>
       <span>当前城市：{{city}}</span>
@@ -207,10 +215,19 @@ const columns = [
 
 // 引入vuex
 import { mapState ,mapGetters } from 'vuex'
+// 引入节流函数
+import debounce from 'lodash/debounce'
+import axios from 'axios'
 export default {
   name: 'AddShop',
   data() {
+    this.lastFetchId = 0;
+    this.fetchUser = debounce(this.fetchUser, 800);
     return {
+      // 搜索地址
+      cityList: [],
+      value: [],
+      fetching: false,
       // 定位地址
       addr: '',
       labelCol: { span: 4 },
@@ -334,6 +351,35 @@ export default {
     ...mapGetters(['categoryList'])
   },
   methods: {
+    fetchUser(value) {
+      console.log('fetching user', value);
+      this.lastFetchId += 1;
+      const fetchId = this.lastFetchId;
+      this.cityList = [];
+      this.fetching = true;
+      axios.get(`/api/v1/pois?city_id=11&keyword=${value}`)
+        .then(response => {
+          return response
+        })
+        .then(body => {
+          if (fetchId !== this.lastFetchId) {
+            // for fetch callback order
+            return;
+          }
+          const data = body.data.map(city => ({
+            text: city.address + city.name
+          }));
+          this.cityList = data;
+          this.fetching = false;
+        });
+    },
+    handleChange(value) {
+      Object.assign(this, {
+        value,
+        cityList: [],
+        fetching: false,
+      });
+    },
     onSubmit() {
       this.$refs.ruleForm.validate(valid => {
         if (valid) {
@@ -452,7 +498,7 @@ export default {
         }
       })
     }
-  },
+  }
 };
 </script>
 <style lang='less' rel='stylesheet/less' scoped>
