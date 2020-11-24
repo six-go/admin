@@ -130,7 +130,7 @@ export default {
       limit: 20,
       offset: 0,
       menu: [],
-      restaurant_id:1,
+      restaurant_id: 1,
       /*表单数据如下*/
       dialogFormVisible: false,
       form: {
@@ -147,8 +147,9 @@ export default {
     };
   },
   async mounted() {
-    const menuData = await reqFoodList(20, 0, 1);
+    const menuData = await reqFoodList(20, 0);
     this.menu = menuData;
+    console.log(this.menu);
   },
   methods: {
     editRow() {
@@ -162,7 +163,7 @@ export default {
     async getFoodList() {
       const limit = this.limit;
       const offset = this.offset;
-      const menuData = await reqFoodList(limit, offset, 2);
+      const menuData = await reqFoodList(limit, offset);
       this.menu = menuData;
     },
     switchPage(val) {

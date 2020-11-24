@@ -4,8 +4,8 @@ import ajax from "./ajax";
 // 请求API
 
 //获取食品列表
-export const reqFoodList1 = () =>ajax.get(`/shopping/v2/foods`);
-export const reqFoodList = (limit, offset, restaurant_id ) =>
+export const reqFoodList1 = () => ajax.get(`/shopping/v2/foods`);
+export const reqFoodList = (limit, offset, restaurant_id) =>
   ajax.get(
     `/shopping/v2/foods?offset=${offset}&limit=${limit}&restaurant_id=${restaurant_id}`
   );
