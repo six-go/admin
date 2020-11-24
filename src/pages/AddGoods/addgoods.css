@@ -1,0 +1,46 @@
+.box {
+  width: 90%;
+  margin: auto;
+}
+.box .title {
+  font-size: 20px;
+  text-align: center;
+}
+.box .headerBox {
+  text-align: center;
+}
+.box .headerBox .form1 {
+  margin-bottom: 50px;
+}
+.box .headerBox .form1 .f1Box {
+  border: 1px solid #d4d0d0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.box .headerBox .form1 .f1Box .select1 {
+  width: 800px;
+  margin-left: 30px;
+}
+.box .headerBox .form1 .f1Box2 {
+  text-align: center;
+}
+.box .headerBox .form1 .f1Box2 .footheader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box .headerBox .form1 .f1Box2 .footfood {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box .headerBox .f2Box {
+  border: 1px solid #d4d0d0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.box .bottomBox {
+  border: 1px solid #d4d0d0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
