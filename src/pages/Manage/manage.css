@@ -1,0 +1,41 @@
+body {
+  height: 100%;
+}
+body .Ma-outer {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+}
+body .Ma-outer .Ma-header {
+  height: 200px;
+}
+body .Ma-outer .Ma-header .Ma-title {
+  font-size: 28px;
+  text-align: center;
+}
+body .Ma-outer .Ma-header .Ma-titleBox {
+  margin-bottom: 20px;
+}
+body .Ma-outer .Ma-header .Ma-titleBox .Ma-titleContent {
+  text-align: center;
+  background: #E5E9F2;
+  line-height: 31px;
+  border-radius: 5px;
+  font-size: 26px;
+}
+body .Ma-outer .Ma-header .Ma-titleBox .Ma-titleContent .Ma-title2 {
+  font-size: 14px;
+}
+body .Ma-outer .Ma-header .Ma-titleBox #firstbox1 {
+  background: orange;
+  color: white;
+}
+body .Ma-outer .Ma-header .Ma-titleBox #firstbox2 {
+  background: deepskyblue;
+  color: white;
+}
+body .Ma-outer .Ma-main {
+  width: 90%;
+  height: 450px;
+  margin: 0 auto;
+}
